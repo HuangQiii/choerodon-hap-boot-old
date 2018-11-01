@@ -1,0 +1,32 @@
+.search-input-wrap {
+  display: flex;
+  position: relative;
+
+  .icon {
+    font-size: 18px;
+    line-height: 34px;
+    position: absolute;
+    left: 10px;
+  }
+
+  .ant-select {
+    background-color: rgba(255,255,255,0.12);
+    padding: 5px 10px 5px 34px;
+
+    .ant-select-selection__placeholder {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .ant-select-underline {
+      display: none;
+    }
+    
+    .ant-select-arrow {
+      display: none;
+    }
+
+    .ant-select-selection-selected-value {
+      color: #fff;
+    }
+  }
+}
