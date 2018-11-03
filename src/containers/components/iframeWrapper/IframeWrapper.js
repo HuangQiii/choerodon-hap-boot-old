@@ -5,13 +5,13 @@ import { Tabs } from 'choerodon-ui';
 import Iframe from './Iframe';
 import './style.less';
 
-const TabPane = Tabs.TabPane;
+const { TabPane } = Tabs;
 
 @withRouter
 @inject('MenuStore')
 @observer
 export default class Main extends Component {
-  render(){
+  render() {
     const { MenuStore } = this.props;
     const { activeMenu: { functionCode }, tabs } = MenuStore;
 
@@ -25,12 +25,12 @@ export default class Main extends Component {
                 key={tab.functionCode}
                 forceRender={false}
               >
-                <Iframe tab={tab}/>
+                <Iframe tab={tab} />
               </TabPane>
             ))
           }
         </Tabs>
       </div>
-    )
+    );
   }
 }

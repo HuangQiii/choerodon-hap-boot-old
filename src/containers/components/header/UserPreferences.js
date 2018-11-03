@@ -8,21 +8,21 @@ export default class UserPreferences extends Component {
   render() {
     const AppBarIconRight = (
       <div className="user-preference-popover-content">
-        <Avatar src={"https://avatars3.githubusercontent.com/u/11797760?s=460&v=4"} className="user-preference-avatar">
-          {"H"}
+        <Avatar src="https://avatars3.githubusercontent.com/u/11797760?s=460&v=4" className="user-preference-avatar">
+          {'H'}
         </Avatar>
         <div className="popover-title">
-          {"Qyellow"}
+          {'Qyellow'}
         </div>
         <div className="popover-text">
-          {"qihuang@ghy.cn"}
+          {'qihuang@ghy.cn'}
         </div>
         <div className="popover-msg-wrapper">
           <div className="popover-text">
-            {"用户信息"}
+            {'用户信息'}
           </div>
           <div className="popover-text">
-            {"用户密码"}
+            {'用户密码'}
           </div>
         </div>
         <div className="popover-button-wrapper">
@@ -52,12 +52,12 @@ export default class UserPreferences extends Component {
         placement="bottomRight"
         // onVisibleChange={this.handleVisibleChange}
       >
-      <div className="user-preference">
-        <Avatar src={"https://avatars3.githubusercontent.com/u/11797760?s=460&v=4"}>
-          {"H"}
-        </Avatar>
-        <div className="user-preference-name">祁煌</div>
-      </div>
+        <div className="user-preference">
+          <Avatar src="https://avatars3.githubusercontent.com/u/11797760?s=460&v=4">
+            {'H'}
+          </Avatar>
+          <div className="user-preference-name">祁煌</div>
+        </div>
       </Popover>
     );
   }

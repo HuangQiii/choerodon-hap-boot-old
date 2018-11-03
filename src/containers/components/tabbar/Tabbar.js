@@ -33,21 +33,22 @@ export default class MenuBar extends Component {
       },
       () => {
         if (pathname === '/') return;
-        const construct_tab = {
-          "children":null,
-          "expand":false,
-          "functionCode":key,
-          "icon":"",
-          "id":-1,
-          "ischecked":null,
-          "score":-1,
-          "shortcutId":null,
-          "text":key,
-          "url":key,
-          "symbol": isReact ? '1' : '0',
+        const construct = {
+          children: null,
+          expand: false,
+          functionCode: key,
+          icon: '',
+          id: -1,
+          ischecked: null,
+          score: -1,
+          shortcutId: null,
+          text: key,
+          url: key,
+          symbol: isReact ? '1' : '0',
         };
-        this.insertTabs(key, isReact, construct_tab);
-      });
+        this.insertTabs(key, isReact, construct);
+      },
+    );
   }
 
   insertTabs(key, isReact, tab) {
@@ -93,7 +94,7 @@ export default class MenuBar extends Component {
   }
 
   render() {
-    const { location : { pathname }, MenuStore } = this.props;
+    const { location: { pathname }, MenuStore } = this.props;
     const { tabs } = MenuStore;
     return (
       <div className="tab-bar-wrap">
@@ -108,18 +109,17 @@ export default class MenuBar extends Component {
                 })}
                 onClick={this.handleLink.bind(this, tab)}
               >
-                  {tab.text}
-                  <Icon
-                    type="close"
-                    style={{ fontSize: 14, marginLeft: 20 }}
-                    onClick={this.handleCloseTab.bind(this, tab)}
-                  />
+                {tab.text}
+                <Icon
+                  type="close"
+                  style={{ fontSize: 14, marginLeft: 20 }}
+                  onClick={this.handleCloseTab.bind(this, tab)}
+                />
               </li>
-              )
-            )
+            ))
           }
         </ul>
-    </div>
+      </div>
     );
   }
 }

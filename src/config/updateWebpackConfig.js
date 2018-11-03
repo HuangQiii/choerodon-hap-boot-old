@@ -2,7 +2,7 @@ const getWebpackCommonConfig = require('./getWebpackCommonConfig');
 
 function updateWebpackConfig(mode) {
   const webpackConfig = getWebpackCommonConfig();
-  if (mode = 'start') {
+  if (mode === 'start') {
     webpackConfig.devtool = 'cheap-module-eval-source-map';
   }
   return webpackConfig;

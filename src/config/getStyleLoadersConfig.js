@@ -51,7 +51,7 @@ function getStyleLoadersConfig(postcssOptions, modifyVarsOptions) {
         },
       ],
     },
-  ]
-};
+  ];
+}
 
 module.exports = getStyleLoadersConfig;

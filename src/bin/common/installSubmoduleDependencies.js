@@ -6,12 +6,12 @@ const install = require('./install');
 function getDependenciesByModules(dependencies) {
   const deps = {};
   const cmps = getAllSubModules();
-  cmps.forEach(cmp => {
+  cmps.forEach((cmp) => {
     const cmpPkgPath = path.join(
       process.cwd(), '..', cmp, 'package.json',
     );
 
-    fs.exists(cmpPkgPath, function(exists) {
+    fs.exists(cmpPkgPath, (exists) => {
       if (exists) {
         const cmpPkg = require(cmpPkgPath);
         Object.assign(deps, cmpPkg[dependencies]);
@@ -33,11 +33,11 @@ function installSubmoduleDependencies(cb) {
 
   mainPackage.dependencies = Object.assign(
     getDependenciesByModules('dependencies'), 
-    mainPackage.dependencies
+    mainPackage.dependencies,
   );
   mainPackage.peerDependencies = Object.assign(
     getDependenciesByModules('peerDependencies'),
-    mainPackage.peerDependencies
+    mainPackage.peerDependencies,
   );
   
   fs.writeFileSync(

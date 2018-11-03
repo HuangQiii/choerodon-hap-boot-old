@@ -23,6 +23,7 @@ import IFRAMEINDEX from './containers/components/iframeWrapper';
 import WORKSPACEINDEX from '../../../../src/main/webapp/WEB-INF/view/react/${workspaceEntry.slice(2)}';
 `;
 
+  /* eslint-disable */
   for (var v in routerMapping) {
     if (v.folderName && !v.folderName.startWith('hap-core')) {
       const fileName = routerMapping[v].entryRouter.slice(6).split('.')[0];
@@ -52,7 +53,7 @@ import WORKSPACEINDEX from '../../../../src/main/webapp/WEB-INF/view/react/${wor
     );
   }
 }`;
-
+  /* eslint-enable */
   fs.writeFileSync(indexPath, str);
 }
 

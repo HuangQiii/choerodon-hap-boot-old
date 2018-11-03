@@ -19,7 +19,6 @@ function run() {
     quiet: true,
     hot: true,
     noInfo: false,
-    // ...devServerConfig,
     contentBase: path.join(process.cwd(), output),
     historyApiFallback: true,
     host: 'localhost',
@@ -29,7 +28,7 @@ function run() {
       target: 'http://localhost:8080',
       changeOrigin: true,
       secure: false,
-      autoRewrite: true
+      autoRewrite: true,
     }],
   };
 
@@ -38,9 +37,7 @@ function run() {
   const compiler = webpack(webpackConfig);
 
   const server = new WebpackDevServer(compiler, serverOptions);
-  server.listen(port, '0.0.0.0', () => {
-    console.log('Starting server on http://localhost:2233');
-  });
+  server.listen(port, '0.0.0.0', () => { });
 }
 
 function dev() {
@@ -48,7 +45,6 @@ function dev() {
   // 开发core模块，直接npm run core
 
   install(() => {
-
     entryRouter();
   
     installSubmoduleDependencies(() => run());

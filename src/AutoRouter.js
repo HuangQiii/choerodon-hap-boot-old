@@ -8,8 +8,8 @@ export default class AutoRouter extends Component {
   render() {
     return (
       <CacheSwitch>
-        <CacheRoute exact path='/iframe/:name' cacheKey="iframe" component={IFRAMEINDEX} />
-        <CacheRoute exact path='/test' cacheKey="REACT_TEST" component={REACTINDEX} />
+        <CacheRoute exact path="/iframe/:name" cacheKey="iframe" component={IFRAMEINDEX} />
+        <CacheRoute exact path="/test" cacheKey="REACT_TEST" component={REACTINDEX} />
       </CacheSwitch>
     );
   }

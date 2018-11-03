@@ -27,29 +27,29 @@ export default class MenuBar extends Component {
       ? pathname.split('/')[1]
       : pathname.split('/')[2];
 
-      MenuStore.loadMenus().then(() => {
-        MenuStore.getPathById(key, menus, isReact, (temppath, targetNode) => {
-          MenuStore.setOpenKeys(temppath);
-          MenuStore.setSelectedKeys([targetNode.functionCode]);
-          MenuStore.setActiveMenu(targetNode);
-        }, () => {
-          if (pathname === '/') return;
-          const construct_tab = {
-            "children":null,
-            "expand":false,
-            "functionCode":key,
-            "icon":"",
-            "id":-1,
-            "ischecked":null,
-            "score":-1,
-            "shortcutId":null,
-            "text":key,
-            "url":key,
-            "symbol": isReact ? '1' : '0',
-          };
-          MenuStore.setSelectedKeys([construct_tab.functionCode]);
-          MenuStore.setActiveMenu(construct_tab);
-        });
+    MenuStore.loadMenus().then(() => {
+      MenuStore.getPathById(key, menus, isReact, (temppath, targetNode) => {
+        MenuStore.setOpenKeys(temppath);
+        MenuStore.setSelectedKeys([targetNode.functionCode]);
+        MenuStore.setActiveMenu(targetNode);
+      }, () => {
+        if (pathname === '/') return;
+        const construct = {
+          children: null,
+          expand: false,
+          functionCode: key,
+          icon: '',
+          id: -1,
+          ischecked: null,
+          score: -1,
+          shortcutId: null,
+          text: key,
+          url: key,
+          symbol: isReact ? '1' : '0',
+        };
+        MenuStore.setSelectedKeys([construct.functionCode]);
+        MenuStore.setActiveMenu(construct);
+      });
       MenuStore.getTreeNodeMenus(menus, (treeNodes) => {
         MenuStore.setTreeNodeMenus(treeNodes);
       });
@@ -81,7 +81,7 @@ export default class MenuBar extends Component {
         >
           {menu.children.map(submenu => this.renderMenu(submenu))}
         </SubMenu>
-      )
+      );
     }
     return this.renderMenuItem(menu);
   }
@@ -134,7 +134,7 @@ export default class MenuBar extends Component {
           className="menu-footer"
           onClick={this.onCollapsed}
         >
-          <Icon type={!collapsed ? "first_page" : "last_page"} />
+          <Icon type={!collapsed ? 'first_page' : 'last_page'} />
         </div>
       </div>
     );

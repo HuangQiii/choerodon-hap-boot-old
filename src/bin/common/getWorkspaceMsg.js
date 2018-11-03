@@ -11,8 +11,7 @@ const path = require('path');
 function getWorkspaceMsg() {
   const workspacePkgPath = path.join(process.cwd(),
     '..', '..', '..',
-    'src', 'main', 'webapp', 'WEB-INF', 'view', 'react', 'package.json',
-  );
+    'src', 'main', 'webapp', 'WEB-INF', 'view', 'react', 'package.json');
 
   const workspacePkg = require(workspacePkgPath);
   const workspaceName = workspacePkg.name;
@@ -22,7 +21,7 @@ function getWorkspaceMsg() {
     workspacePkgPath,
     workspaceName,
     workspaceEntry,
-  }
+  };
 }
 
 module.exports = getWorkspaceMsg;

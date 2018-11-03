@@ -16,7 +16,7 @@ function getSubmoduleRouter(cb) {
       process.cwd(), '..', cmp, 'package.json',
     );
 
-    fs.exists(cmpPkgPath, function(exists) {
+    fs.exists(cmpPkgPath, (exists) => {
       if (exists) {
         const cmpPkg = require(cmpPkgPath);
 
@@ -26,7 +26,7 @@ function getSubmoduleRouter(cb) {
         };
 
         if (index === cmps.length - 1) {
-          cb(routerMapping)
+          cb(routerMapping);
         }
       }
     });

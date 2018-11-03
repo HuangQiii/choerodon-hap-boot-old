@@ -14,7 +14,6 @@ function run() {
   const serverOptions = {
     quiet: true,
     hot: true,
-    // ...devServerConfig,
     contentBase: path.join(process.cwd(), output),
     historyApiFallback: true,
     host: 'localhost',
@@ -24,7 +23,7 @@ function run() {
       target: 'http://localhost:8080',
       changeOrigin: true,
       secure: false,
-      autoRewrite: true
+      autoRewrite: true,
     }],
   };
 
@@ -33,14 +32,10 @@ function run() {
   const compiler = webpack(webpackConfig);
 
   const server = new WebpackDevServer(compiler, serverOptions);
-  server.listen(port, '0.0.0.0', () => {
-    console.log('Starting server on http://localhost:2233');
-  });
+  server.listen(port, '0.0.0.0', () => { });
 }
 
 function core() {
-  // 开发hap-core模块
-
   run();
 }
 

@@ -9,7 +9,6 @@ const { Option } = Select;
 @inject('MenuStore')
 @observer
 export default class SearchInput extends Component {
-
   onChange = (code) => {
     const { MenuStore } = this.props;
     const { treeNodeMenus, activeMenu } = MenuStore;
